@@ -1,0 +1,1 @@
+const connectionString = mongodb+srv://xthazudp:<password>@nodetaskmanager.wulmn90.mongodb.net/?retryWrites=true&w=majority
