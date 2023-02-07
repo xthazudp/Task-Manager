@@ -2,8 +2,8 @@ const Task = require('../models/task');
 
 const getAllTasks = async (req, res) => {
   try {
-    const task = await Task.find({});
-    res.status(200).json({ task });
+    const tasks = await Task.find({});
+    res.status(200).json({ tasks });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
@@ -26,7 +26,9 @@ const getTask = async (req, res) => {
       return res.status(404).json({ mag: `No task with id : ${taskID}` });
     }
     res.status(200).json({ task });
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
 const deleteTask = async (req, res) => {
